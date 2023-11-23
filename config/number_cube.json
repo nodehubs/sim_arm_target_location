@@ -1,0 +1,5 @@
+{
+	"model_file": "/opt/nodehub_model/sim_arm_detection/sim_arm_cube_detection.bin",
+	"class_num": 3,
+	"cls_names_list": "config/number_cube.list"
+}
