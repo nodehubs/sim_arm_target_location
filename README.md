@@ -23,6 +23,7 @@ sudo apt install -y tros-sim-arm-target-location
 ```
 
 **2.运行功能**
+
 PC端：
 ```shell
 #启动机械臂仿真环境
