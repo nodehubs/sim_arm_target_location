@@ -8,7 +8,7 @@
 
 ## 准备工作
 
-1. Ubuntu22.04操作系统的PC（用于机械臂仿真）
+1. Ubuntu22.04操作系统的PC（用于机械臂仿真），并且与RDK X3在同一网段下
 2. 在PC上完成[机械臂仿真功能包](https://github.com/wunuo1/sim_arm_pickup_demo)的编译，并且能够正常运行。
 
 ## 安装功能包
@@ -23,15 +23,26 @@ sudo apt install -y tros-sim-arm-target-location
 ```
 
 **2.运行功能**
-
+PC端：
 ```shell
+#启动机械臂仿真环境
+source ~/moveit2_ws/install/setup.bash
+ros2 launch panda_ros2_moveit2 panda.launch.py
+
+#打开新的终端，启动机械臂控制节点
+source ~/moveit2_ws/install/setup.bash
+ros2 launch sim_arm_pickup_control arm_pickup_service.launch.py
+```
+
+RDK X3：
+```shell
+# 启动物体检测与位置解算功能
 source /opt/tros/local_setup.bash
 cp -r /opt/tros/lib/sim_arm_target_location/config/ .
-
-# 启动物体检测与位置解算功能
 ros2 launch sim_arm_target_location sim_arm_target_location.launch.py
 
 # 打开新的终端，发送夹取请求（方块的数字为1-3，此处以1为例）
+source /opt/tros/local_setup.bash
 ros2 service call /sim_arm_target_location/choose_cube sim_arm_location_msg/srv/ChooseCube "{num: 1}"
 ```
 
