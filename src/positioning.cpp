@@ -30,6 +30,9 @@ namespace sim_arm_target_location
     {
       if (target->class_name == target_names[num - 1])
       {
+        //相机分辨率为1280*720
+        //相机坐标系下的位置：像素坐标离图片中心的值 / 相机焦距(固定值：507.872) * 相机坐标系到物体中心的距离(固定值：0.517194)
+        //相机相对机械臂的位置偏移，x轴为0.335294，y轴为0
         target_location->x = 0.335294 + (360 - target->y) / 507.872 * 0.517194;
         target_location->y = (640 - target->x) / 507.872 * 0.517194;
         target_location->z = 0.045;

@@ -4,6 +4,8 @@
 
 该功能包接收用户选择方块数字的请求，通过yolov5检测目标，在Z轴距离确定的情况下解算出物体的三维坐标，并请求仿真机械臂控制节点夹取物体。
 
+![framework](./image/framework.jpg)
+
 # 使用方法
 
 ## 准备工作
@@ -34,6 +36,7 @@ ros2 launch panda_ros2_moveit2 panda.launch.py
 source ~/moveit2_ws/install/setup.bash
 ros2 launch sim_arm_pickup_control arm_pickup_service.launch.py
 ```
+![env](./image/env.jpg)
 
 RDK X3：
 ```shell
@@ -46,7 +49,7 @@ ros2 launch sim_arm_target_location sim_arm_target_location.launch.py
 source /opt/tros/local_setup.bash
 ros2 service call /sim_arm_target_location/choose_cube sim_arm_location_msg/srv/ChooseCube "{num: 1}"
 ```
-
+![effect](./image/effect.jpg)
 
 # 接口说明
 
