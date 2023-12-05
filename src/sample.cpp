@@ -581,6 +581,7 @@ int TargetLocationNode::PostProcess(
   return 0;
 }
 
+// 接收数字的请求，计算出对应数字的方块在机械臂坐标系下的3D位置，并请求机械臂控制节点夹取物体
 void TargetLocationNode::ServiceCallBack(
     const sim_arm_location_msg::srv::ChooseCube::Request::SharedPtr request,
     const sim_arm_location_msg::srv::ChooseCube::Response::SharedPtr response)
