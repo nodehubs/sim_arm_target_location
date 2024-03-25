@@ -1,8 +1,10 @@
-简体中文 | [English](./README.md)
+[English](./README.md) | 简体中文
+
+英文 | [简体中文](./README_cn.md)
 
 # sim_arm_target_location
 
-# 功能介绍
+# 功能介绍 EN
 
 该功能包接收用户选择方块数字的请求，通过yolov5检测目标，在Z轴距离确定的情况下解算出物体的三维坐标，并请求仿真机械臂控制节点夹取物体。
 
