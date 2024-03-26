@@ -48,7 +48,8 @@ cp -r /opt/tros/lib/sim_arm_target_location/config/ .
 ros2 launch sim_arm_target_location sim_arm_target_location.launch.py
 
 # Open a new terminal, send a pick-up request (the number of the block is 1-3, using 1 as an example here)
-``````bash
+```
+```bash
 source /opt/tros/local_setup.bash
 ros2 service call /sim_arm_target_location/choose_cube sim_arm_location_msg/srv/ChooseCube "{num: 1}"
 ```
