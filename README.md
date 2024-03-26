@@ -33,6 +33,9 @@ On the PC side:
 # Start the robotic arm simulation environment
 source ~/moveit2_ws/install/setup.bash
 ros2 launch panda_ros2_moveit2 panda.launch.py
+```
+
+```shell
 
 # Open a new terminal, start the robotic arm control node
 source ~/moveit2_ws/install/setup.bash
@@ -47,9 +50,10 @@ source /opt/tros/local_setup.bash
 cp -r /opt/tros/lib/sim_arm_target_location/config/ .
 ros2 launch sim_arm_target_location sim_arm_target_location.launch.py
 
-# Open a new terminal, send a pick-up request (the number of the block is 1-3, using 1 as an example here)
 ```
 ```bash
+# Open a new terminal, send a pick-up request (the number of the block is 1-3, using 1 as an example here)
+
 source /opt/tros/local_setup.bash
 ros2 service call /sim_arm_target_location/choose_cube sim_arm_location_msg/srv/ChooseCube "{num: 1}"
 ```
